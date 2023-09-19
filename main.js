@@ -16,9 +16,9 @@ const size = {
 const scene = new THREE.Scene();
 
  
-const camera = new THREE.PerspectiveCamera(64, size.width / size.height, 1, 1000);
-camera.position.z = -14.5;  
-camera.position.y = 6;
+const camera = new THREE.PerspectiveCamera(74, size.width / size.height, 1, 1000);
+camera.position.z = -9.8;  
+camera.position.y = 4.8;
 scene.add(camera);
 
  
@@ -39,6 +39,12 @@ gltfLoader.setDRACOLoader(dracoLoader);
 let mobileNode
 let mobileNode2
 
+/* const material = new THREE.MeshNormalMaterial({
+  color: 0xffffff,
+  roughness: 0.5, // Ajusta según tus necesidades
+  metalness: 0.5, // Ajusta según tus necesidades
+}); */
+
 gltfLoader.load('./model/magnetic.glb', (gltf) => {
   const magnetic = gltf.scene;
   magnetic.rotation.y = Math.PI;
@@ -52,6 +58,7 @@ gltfLoader.load('./model/magnetic.glb', (gltf) => {
     if (child.isMesh) {
       child.castShadow = true;
       child.receiveShadow = true;
+    /*   child.material = material */
     }
   });
 
@@ -75,26 +82,29 @@ directionalLight.position.set(2, 1, -5);
 directionalLight.castShadow = true;  
 scene.add(directionalLight);
 
-const directionalLight2 = new THREE.DirectionalLight(0xFFF8EE, 33);
-directionalLight2.position.set(-4,6, -1);  
-directionalLight2.castShadow = true;  
-scene.add(directionalLight2);
 
-const directionalLight3 = new THREE.DirectionalLight(0xFFF8EE, 16);
-directionalLight3.position.set(0, 20, 17);  
+const directionalLight7 = new THREE.DirectionalLight(0xFFF8EE, 10);
+directionalLight7.position.set( -4,12, 14);  
+directionalLight7.castShadow = true;  
+scene.add(directionalLight7);
+
+const directionalLight3 = new THREE.DirectionalLight(0xFFF8EE, 30);
+directionalLight3.position.set(0, 30, 27);  
 directionalLight3.castShadow = false;  
 scene.add(directionalLight3);
 
-const directionalLight4 = new THREE.DirectionalLight(0x10F010, .5);
+const directionalLight4 = new THREE.DirectionalLight(0x10F010, 5);
 directionalLight4.position.set(-5, .4, 14);  
 directionalLight4.castShadow = true;  
 scene.add(directionalLight4);
 
 
-const directionalLight5 = new THREE.DirectionalLight(0xFFF8EE, 4);
-directionalLight5.position.set(5, .4, 10); 
+const directionalLight5 = new THREE.DirectionalLight(0xFFF8EE, 10);
+directionalLight5.position.set(5, .1, 10); 
 directionalLight5.castShadow = true;  
 scene.add(directionalLight5);
+
+
 
 
 const ambientLight = new THREE.AmbientLight(0xFFF8EE, 20); 
