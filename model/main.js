@@ -45,7 +45,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 let mobileNode
 let mobileNode2
 
-gltfLoader.load("./magnetic.glb", (gltf) => {
+gltfLoader.load("/magnetic.glb", (gltf) => {
   const magnetic = gltf.scene;
   magnetic.rotation.y = Math.PI;
   magnetic.scale.set(0.9, 0.9, 0.9);
