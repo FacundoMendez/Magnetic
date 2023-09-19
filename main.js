@@ -45,7 +45,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 let mobileNode
 let mobileNode2
 
-const modelPath = './magnetic.glb';  
+const modelPath = './model/magnetic.glb';  
 gltfLoader.load(modelPath, (gltf) => {
   const magnetic = gltf.scene;
   magnetic.rotation.y = Math.PI;
