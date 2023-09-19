@@ -30,12 +30,6 @@ renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 
-const material = new THREE.MeshNormalMaterial({
-  color: 0x000000,  
-  roughness: 0.2,  
-  metalness: .9,  
-});
-
  
 const gltfLoader = new GLTFLoader();
 const dracoLoader = new DRACOLoader();
@@ -45,7 +39,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 let mobileNode
 let mobileNode2
 
-gltfLoader.load('./model/magnetic.gltf', (gltf) => {
+gltfLoader.load('./model/magnetic.glb', (gltf) => {
   const magnetic = gltf.scene;
   magnetic.rotation.y = Math.PI;
   magnetic.scale.set(0.9, 0.9, 0.9);
